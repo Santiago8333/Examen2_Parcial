@@ -1,1 +1,34 @@
-/build
+# Gradle files
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.properties
+gradle-app.setting
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Log and Android Studio specific files
+/.idea/
+/.idea/workspace.xml
+.idea/caches
+.idea/libraries
+.idea/modules.xml
+.idea/.name
+.idea/compiler.xml
+.idea/copyright/
+.idea/inspectionProfiles
+.idea/codeStyles
+.idea/dictionaries
+.idea/misc.xml
+.idea/modules
+.idea/vcs.xml
+.idea/gradle.xml
+.idea/sqlDataSources.xml
+.idea/jarRepositories.xml
+.idea/tasks.xml
+.idea/assetWizardSettings.xml
+.idea/dataSources/
+/.idea/dataSources.ids
+.idea/dataSources.local.xml
+.idea/sql_dialect_settings.xml
+.idea/googleservices.xml
