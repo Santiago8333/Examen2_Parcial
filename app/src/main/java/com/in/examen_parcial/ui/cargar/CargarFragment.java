@@ -45,6 +45,7 @@ public class CargarFragment extends Fragment {
                 String precio = binding.editPrecio.getText().toString().trim();
                 String stock = binding.editStock.getText().toString().trim();
                 viewModel.CargarProducto(codigo,descripcion,precio,stock);
+
             }
         });
         //mostrar mensaje
@@ -52,6 +53,9 @@ public class CargarFragment extends Fragment {
             @Override
             public void onChanged(String s) {
                 binding.textError.setText(s);
+                if (s.equals("Producto cargado exitosamente")) {
+                    limpiarCampos();
+                }
             }
         });
         return root;
@@ -63,5 +67,10 @@ public class CargarFragment extends Fragment {
         mViewModel = new ViewModelProvider(this).get(CargarViewModel.class);
         // TODO: Use the ViewModel
     }
-
+    private void limpiarCampos() {
+        binding.editCodigo.setText("");
+        binding.editDescripcion.setText("");
+        binding.editPrecio.setText("");
+        binding.editStock.setText("");
+    }
 }

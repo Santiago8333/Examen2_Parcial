@@ -10,6 +10,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.in.examen_parcial.MainActivity;
+import com.in.examen_parcial.databinding.FragmentCargarBinding;
 import com.in.examen_parcial.model.Producto;
 
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ import java.util.ArrayList;
 public class CargarViewModel extends AndroidViewModel {
     private ArrayList<Producto> productos;
     private MutableLiveData<String> errorMensaje = new MutableLiveData<>();
+    private FragmentCargarBinding binding;
 
     public CargarViewModel(@NonNull Application application) {
         super(application);
@@ -43,6 +45,7 @@ public class CargarViewModel extends AndroidViewModel {
         productos.add(nuevoProducto);
         MainActivity.listaProductos.add(nuevoProducto);
         Log.d("CargarViewModel", "Producto cargado: " + nuevoProducto.getCodigo());
+
             errorMensaje.setValue("Producto cargado exitosamente");
         } catch (NumberFormatException e) {
             errorMensaje.setValue("Precio y stock deben ser numeros validos");
@@ -51,5 +54,6 @@ public class CargarViewModel extends AndroidViewModel {
     public LiveData<String> getErrorMessage() {
         return errorMensaje;
     }
+
 
 }
